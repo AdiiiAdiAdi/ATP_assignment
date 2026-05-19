@@ -1,4 +1,4 @@
- ⚡ APT Real-Time Order Monitoring System
+ Atypical Technologies- Assignment
 
 A full-stack **Change Data Capture (CDC)** system that monitors a MySQL `orders` table in real-time and pushes live updates to connected browser clients via WebSockets.
 
@@ -12,7 +12,7 @@ A full-stack **Change Data Capture (CDC)** system that monitors a MySQL `orders`
 <img width="1100" height="800" alt="ChatGPT Image May 19, 2026, 01_48_23 PM" src="https://github.com/user-attachments/assets/108a50d1-06da-47cf-92ca-c42975282078" />
 
 
-### Data Flow (Step by Step)
+### Data Flow 
 
 1. **A change happens** — Someone INSERTs, UPDATEs, or DELETEs a row in the `orders` table (via Postman, MySQL CLI, or any client)
 2. **MySQL trigger fires** — A DB-level trigger automatically logs the change into a `change_log` table with the operation type and order ID
@@ -22,7 +22,7 @@ A full-stack **Change Data Capture (CDC)** system that monitors a MySQL `orders`
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology | Why |
 |-------|-----------|-----|
@@ -66,7 +66,7 @@ at_assignement/
 
 ---
 
-## 🚀 Getting Started
+##  How to Run
 
 ### Prerequisites
 
@@ -146,7 +146,7 @@ Dashboard opens on `http://localhost:5173`
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### `GET /orders`
 Returns all orders sorted by most recent.
@@ -252,7 +252,7 @@ Works great for demos and small workloads. The 1-second polling on `change_log` 
 
 ---
 
-## 🧠 Key Backend Concepts Demonstrated
+##  Key Backend Concepts Demonstrated
 
 - **Change Data Capture (CDC)** — Capturing DB mutations as events
 - **MySQL Triggers** — Database-level automation
@@ -265,6 +265,4 @@ Works great for demos and small workloads. The 1-second polling on `change_log` 
 
 ---
 
-## 📝 License
 
-MIT
