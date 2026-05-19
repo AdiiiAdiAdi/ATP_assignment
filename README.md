@@ -1,4 +1,4 @@
-# ⚡ APT Real-Time Order Monitoring System
+ ⚡ APT Real-Time Order Monitoring System
 
 A full-stack **Change Data Capture (CDC)** system that monitors a MySQL `orders` table in real-time and pushes live updates to connected browser clients via WebSockets.
 
@@ -8,32 +8,9 @@ A full-stack **Change Data Capture (CDC)** system that monitors a MySQL `orders`
 
 ## 🏗️ Architecture
 
-```
-┌─────────────┐      SQL Triggers       ┌──────────────┐
-│   MySQL DB  │ ──────────────────────►  │  change_log  │
-│  (orders)   │  INSERT/UPDATE/DELETE    │   (table)    │
-└─────────────┘                          └──────┬───────┘
-                                                │
-                                         Polling (1s)
-                                                │
-                                         ┌──────▼───────┐
-                                         │  Node.js     │
-                                         │  Watcher     │
-                                         │  Service     │
-                                         └──────┬───────┘
-                                                │
-                                         Socket.IO emit
-                                                │
-                          ┌─────────────────────▼─────────────────────┐
-                          │              Socket.IO Server              │
-                          │         (WebSocket connections)            │
-                          └──────┬──────────────┬──────────────┬──────┘
-                                 │              │              │
-                          ┌──────▼──┐    ┌──────▼──┐    ┌──────▼──┐
-                          │ Browser │    │ Browser │    │ Browser │
-                          │  Tab 1  │    │  Tab 2  │    │  Tab N  │
-                          └─────────┘    └─────────┘    └─────────┘
-```
+
+<img width="1100" height="800" alt="ChatGPT Image May 19, 2026, 01_48_23 PM" src="https://github.com/user-attachments/assets/108a50d1-06da-47cf-92ca-c42975282078" />
+
 
 ### Data Flow (Step by Step)
 
